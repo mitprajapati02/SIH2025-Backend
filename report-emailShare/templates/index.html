@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Risk Table</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 95%;
+        margin: 30px auto;
+      }
+
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+      }
+
+      th {
+        background-color: #f5f5f5;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      .download-btn {
+        display: block;
+        width: 250px;
+        margin: 20px auto;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+
+      /* Overall Risk Row Coloring */
+      .Safe td {
+        background-color: #e6f4ea;
+        color: #155724;
+      }
+
+      .Moderate td {
+        background-color: #fff8e1;
+        color: #856404;
+      }
+
+      .High td {
+        background-color: #fdecea;
+        color: #721c24;
+      }
+    </style>
+  </head>
+  <body>
+    <h3 style="text-align: center">Send At-Risk Report via Email</h3>
+    <form
+      action="/send-report"
+      method="POST"
+      style="text-align: center; margin-bottom: 30px"
+    >
+      <input
+        type="email"
+        name="email"
+        placeholder="Enter recipient email"
+        required
+        style="padding: 8px; width: 250px"
+      />
+      <button type="submit" style="padding: 8px 16px">Send Report</button>
+    </form>
+
+    <h2>Student Risk Report</h2>
+
+    <a href="/report" class="download-btn">Download At-Risk Students Report</a>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Student ID</th>
+          <th>Name</th>
+          <th>Total Marks</th>
+          <th>Out of</th>
+          <th>Attendance %</th>
+          <th>Fees Status</th>
+          <th>Overall Risk</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for student in students %}
+        <tr class="{{ student.overall_risk }}">
+          <td>{{ student.student_id }}</td>
+          <td>{{ student.Name }}</td>
+          <td>{{ student.Total }}</td>
+          <td>{{ student.Out_of }}</td>
+          <td>{{ student.attendance_percent }}</td>
+          <td>{{ student.Fees_Status }}</td>
+          <td>{{ student.overall_risk }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
