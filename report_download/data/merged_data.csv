@@ -1,0 +1,6 @@
+student_id,Name,Science,Maths,Social Science,Total,Out_of,Attemps,total_days,days_present,days_absent,Fees_Status,attendance_percent,marks_percent,marks_risk,risk_reasons
+101,Sneha,75,55,80,210,300,1,100,92,8,Paid,92.0,70.0,Safe,None
+102,Riya,18,45,60,123,300,2,100,65,35,Not Paid,65.0,41.0,Moderate,"Low Marks, Low Attendance, Fee Issues"
+103,Arjun,50,66,79,189,300,1,100,75,25,Paid,75.0,63.0,Safe,None
+104,Kiran,19,39,20,78,300,2,100,88,12,Pending,88.0,26.0,High,"Low Marks, Fee Issues"
+105,Ayush,56,84,32,172,300,2,100,55,45,Paid,55.0,57.33,Moderate,"Low Marks, Low Attendance"
